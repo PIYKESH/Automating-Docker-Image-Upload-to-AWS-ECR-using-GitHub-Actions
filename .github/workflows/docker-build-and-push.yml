@@ -28,7 +28,7 @@ jobs:
 
       - name: Build and Push to AWS ECR
         env:
-          AWS_REGION: ${{us-east-1}
+          AWS_REGION: ${{US-East(N.Virginia)}
           AWS_ACCESS_KEY_ID: ${{AKIASTLFPJP4FIICIYMP}}
           AWS_SECRET_ACCESS_KEY: ${{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}}
           ECR_REGISTRY: ${{178990828536}}
