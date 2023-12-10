@@ -1,0 +1,49 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.docker
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/*.lock') }}
+
+      - name: Build and Push to AWS ECR
+        env:
+          AWS_REGION: ${{ us-east-1 }}
+          AWS_ACCESS_KEY_ID: ${{ AKIASTLFPJP4FIICIYMP }}
+          AWS_SECRET_ACCESS_KEY: ${{ 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 }}
+          ECR_REGISTRY: ${{ 178990828536 }}
+          IMAGE_NAME: web-app
+          CONTAINER_TAG: ${{ github.sha }}
+        run: |
+          docker buildx create --use
+          docker buildx inspect
+          
+          echo $AWS_ACCESS_KEY_ID | docker login -u AWS --password-stdin $ECR_REGISTRY
+          
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            -t $ECR_REGISTRY/$IMAGE_NAME:$CONTAINER_TAG \
+            -f Dockerfile \
+            .
+          
+          docker push $ECR_REGISTRY/$IMAGE_NAME:$CONTAINER_TAG
