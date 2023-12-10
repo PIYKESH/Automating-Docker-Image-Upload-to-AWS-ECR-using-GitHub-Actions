@@ -28,10 +28,10 @@ jobs:
 
       - name: Build and Push to AWS ECR
         env:
-          AWS_REGION: ${{US-East(N.Virginia)}
-          AWS_ACCESS_KEY_ID: ${{AKIASTLFPJP4FIICIYMP}}
-          AWS_SECRET_ACCESS_KEY: ${{CLW33mXeAF+77fbAo46Nl9Kfnac0VZkDojjSiv6K}}
-          ECR_REGISTRY: ${{178990828536}}
+          AWS_REGION: ${{ YOUR_AWS_REGION }
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ECR_REGISTRY: ${{ ECR_REGISTRY }}
           IMAGE_NAME: web-app
           CONTAINER_TAG: ${{ github.sha }}
         run: |
