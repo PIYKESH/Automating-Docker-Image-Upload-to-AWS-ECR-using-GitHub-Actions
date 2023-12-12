@@ -12,7 +12,7 @@ jobs:
 
     env:
       AWS_REGION: us-east-1
-      ECR_REGISTRY: 178990828536.dkr.ecr.us-east-1.amazonaws.com/piyu
+      ECR_REGISTRY: 178990828536.dkr.ecr.us-east-1.amazonaws.com
       ECR_REPOSITORY: piyu  
       IMAGE_TAG: ${{ github.sha }}
 
