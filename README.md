@@ -9,6 +9,7 @@
 # Use this command to build the image 'docker build -t web-app .' ,Here web-app is the image name which I have given in yyour case you can give any.
 # After building the image, you can run your container by ruuning this 'docker run -p 5000:5000 web-app' .
 # Create a private repo using AWS-ECR service under the AWS Account, If you don't have create on as we need it later to setup the github actions which is technically CI/CD.
-#
+# So after setting up your repo under AWS Account as a private one with required permission we are good to go.
+Then only part which is left is writing down the yaml file to perform the Github Action, As we'll create workflow that triggers on push or pull request events which include steps to build the Docker image and push it to AWS ECR making it to optimize the workflow runs.
 
 
