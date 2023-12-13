@@ -13,8 +13,10 @@
 # Create a private repo using AWS-ECR service under the AWS Account, If you don't have create on as we need it later to setup the github actions which is technically CI/CD.
 # So after setting up your repo under AWS Account as a private one with required permission we are good to go.
 # Then only part which is left is writing down the yaml file to perform the Github Action, As we'll create workflow that triggers on push or pull request events which include steps to build the Docker image and push it to AWS ECR making it to optimize the workflow runs.
+# We have implemented best security practices for Docker and GitHub Actions we used secrets for storing sensitive credentials.
 # As you commit the yaml.file the workflow action will run will show you the output under the summary, If your run was successfull you can see the image in the ECR repo like this.
  ![image](https://github.com/PIYKESH/AWS-ECR-Using-GitHub-Actions/assets/90650824/acbf6b02-95a9-40e9-95a2-db21d62099fc)
+
 
          ---------------------------------------------------------- Thank you :) ----------------------------------------------------------
 
