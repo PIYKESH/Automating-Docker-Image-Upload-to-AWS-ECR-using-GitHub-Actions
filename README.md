@@ -6,7 +6,7 @@
 
 # Then created a folder named templates in the same directory as app.py, and inside it, create a file named index.html .
 
--Simple web app defines a route ("/") that renders an HTML template with a message. When you run the app by running python app.py .
+# Simple web app defines a route ("/") that renders an HTML template with a message. When you run the app by running python app.py .
 -Visit to check http://127.0.0.1:5000/ in your web browser, and you should see your simple web app displaying the message "Hello! .
 -To containerize your Python web app using Docker, you'll need to create a Dockerfile. Make sure your app.py and any other necessary files are in the same directory 
  as the Dockerfile.
