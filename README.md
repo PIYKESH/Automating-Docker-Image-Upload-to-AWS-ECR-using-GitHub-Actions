@@ -1,9 +1,11 @@
 # Objective:- Creating a GitHub Actions workflow that automatically builds Docker images and uploads them to AWS Elastic Container Registry (ECR) upon code pushes or pull requests.!
-
 -Creating a simple web app in Python can be done using a web framework. As Flask is a popular choice for building web applications in Python due to its simplicity and 
  ease of use.
+
 -Firstly created a file named app.py.
+
 -Then created a folder named templates in the same directory as app.py, and inside it, create a file named index.html .
+
 -Simple web app defines a route ("/") that renders an HTML template with a message. When you run the app by running python app.py .
 -Visit to check http://127.0.0.1:5000/ in your web browser, and you should see your simple web app displaying the message "Hello! .
 -To containerize your Python web app using Docker, you'll need to create a Dockerfile. Make sure your app.py and any other necessary files are in the same directory 
